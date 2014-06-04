@@ -9,4 +9,3 @@ permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
-permalink: pretty
