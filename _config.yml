@@ -2,8 +2,10 @@
 title: "TODO: Make a Podcast"
 description: "This is a podcast about tech in Berlin"
 baseurl: ""
-url: "http://yourdomain.com"
+url: "http://todocastberlin.github.io"
 username: todocastberlin
+
+permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
