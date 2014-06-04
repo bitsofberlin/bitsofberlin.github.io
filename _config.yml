@@ -9,3 +9,8 @@ permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
+
+gems:
+- jekyll-sitemap
+- jemoji
+
