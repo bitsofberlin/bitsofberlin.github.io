@@ -1,9 +1,9 @@
 # Site settings
-title: "TODO: Make a Podcast"
+title: "Bits Of Berlin"
 description: "This is a podcast about tech in Berlin"
 baseurl: ""
-url: "http://todocastberlin.github.io"
-username: todocastberlin
+url: "http://bitsofberlin.github.io"
+username: bitsofberlin
 
 permalink: /:year/:month/:day/:title/
 
