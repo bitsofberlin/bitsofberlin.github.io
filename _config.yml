@@ -2,7 +2,7 @@
 title: "bits of berlin"
 description: "This is a podcast about tech in Berlin"
 baseurl: ""
-url: "http://bitsofberlin.github.io"
+url: "http://bitsofberlin.org"
 username: bitsofberlin
 
 permalink: /:year/:month/:day/:title/
