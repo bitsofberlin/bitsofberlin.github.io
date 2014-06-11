@@ -322,19 +322,20 @@ a:visited { color: #205caa; }
   }
 
   .site-nav {
-    float: left;
+    text-align: right;
   }
 
   .site-footer .left-footer {
     float: none;
-  }
-  .site-footer .right-footer {
-    float: none;
+    margin-bottom: 10px;
   }
 
-  .site-nav .page-link {
-    margin-left: 0px;
-    margin-right: 20px;
+  .site-footer .left-footer a {
+    display: block;
+  }
+
+  .site-footer .right-footer {
+    float: none;
   }
 
   .post-header h1 { font-size: 36px; }
