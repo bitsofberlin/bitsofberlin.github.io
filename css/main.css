@@ -86,6 +86,11 @@ a:visited { color: #205caa; }
   margin-right: 10px;
 }
 
+.site-footer .icon {
+  color: #888;
+  font-size: 20px;
+}
+
 .site-footer .right-footer {
   float: right;
 }
