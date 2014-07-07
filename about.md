@@ -10,6 +10,6 @@ Hosted by Tam Eastley [@travelingtamm](http://twitter.com/travelingtamm)
 and Bodo Tasche [@bitboxer](http://twitter.com/bitboxer)
 
 Bodo Tasche    
-"TODO: Make a Podcast"    
+"bits of berlin"    
 Richard-Sorge-Str. 58    
 10249 Berlin
