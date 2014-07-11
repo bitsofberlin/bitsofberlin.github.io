@@ -93,6 +93,7 @@ a:visited { color: #32a200; }
 
 .site-footer .right-footer {
   float: right;
+  padding-top: 5px;
 }
 
 .github-icon-svg,
