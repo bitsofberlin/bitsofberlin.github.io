@@ -44,29 +44,38 @@ a:visited { color: #32a200; }
   border-top: 5px solid #333;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
-  background-color: white;
-  padding-top: 50px;
+  background-color: black;
+  padding: 20px 0px 15px 0px;
+  background-image: url(/images/header_pattern.png);
+  text-transform: uppercase;
+  font-family: 'Play', sans-serif;
+}
+
+.site-header .wrap {
+  position: relative;
 }
 
 .site-title,
 .site-title:hover,
 .site-title:visited {
   display: block;
-  color: #333;
-  font-size: 26px;
-  letter-spacing: -1px;
+  color: #57e11d;
+  font-size: 40px;
   float: left;
   position: relative;
   z-index: 1;
+  text-decoration: none;
 }
 
 .site-nav {
-  float: right;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
 }
 
 .site-nav .page-link {
   margin-left: 20px;
-  color: #727272;
+  color: #57e11d;
   letter-spacing: -.5px;
 }
 
@@ -332,7 +341,9 @@ a:visited { color: #32a200; }
   }
 
   .site-nav {
-    text-align: right;
+    text-align: left;
+    padding-left: 10px;
+    position: relative;
   }
 
   .site-footer .left-footer {
