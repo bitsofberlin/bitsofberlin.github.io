@@ -12,6 +12,32 @@ layout: default
   {{ content }}
   </article>
 
+  <div class='social'>
+
+    <div class="share">
+      {{ ":heart: it?" | emojify }}
+      Share it on <a class="tweet" href="https://twitter.com/share?url={{ site.url }}{{ page.url }}">Twitter</a> or
+      <a class="fbpost" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}">Facebook</a> !
+    </div>
+
+    <script>
+      $('a.tweet').click(function(e){
+        e.preventDefault();
+        var loc = "{{ site.url }}{{ page.url }}";
+        var title  = encodeURI("{{page.title}} by @bitsofberlin");
+        window.open('https://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+      });
+      $('a.fbpost').click(function(e){
+        e.preventDefault();
+        window.open($(this).attr("href"), 'fbwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+      });
+    </script>
+
+    <div class="flattr">
+      <script id='fbt1nml'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=bodo.tasche&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbt1nml');</script>
+    </div>
+  </div>
+
   <div id="disqus_thread"></div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

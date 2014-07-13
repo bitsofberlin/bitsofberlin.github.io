@@ -242,6 +242,19 @@ a:visited { color: #32a200; }
 
 .post pre.terminal code { background-color: #333; }
 
+.post .share {
+  margin: 10px 0px 20px 0px;
+}
+
+.post .flattr {
+  margin: 10px 0px;
+}
+
+.emoji {
+  width: 20px;
+  height: 20px;
+}
+
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
 

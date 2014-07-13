@@ -5,6 +5,7 @@ baseurl: ""
 url: "http://bitsofberlin.org"
 username: bitsofberlin
 
+emoji_dir: /css/emoji
 permalink: /:year/:month/:day/:title/
 
 # Build settings
