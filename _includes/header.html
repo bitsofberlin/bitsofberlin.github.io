@@ -2,7 +2,10 @@
 
   <div class="wrap">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <div class="logo-box">
+      <img class="site-logo" src="/images/logo.png"/>
+      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </div>
 
     <nav class="site-nav">
       {% for page in site.pages %}
