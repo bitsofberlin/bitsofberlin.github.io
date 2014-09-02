@@ -54,11 +54,11 @@ a:visited { color: #32a200; }
 }
 
 .site-header {
-  border-bottom: 1px solid #888;
+  border-bottom: 1px solid #eee;
   min-height: 56px;
-  background-color: #eee;
-  padding: 20px 0px 15px 0px;
-  background-image: url(/images/header_pattern.png);
+  /* background-color: #eee; */
+  padding: 20px 0px 5px 0px;
+  /* background-image: url(/images/header_pattern.png); */
   text-transform: uppercase;
   font-family: 'Geo', sans-serif;
   font-weight: normal;
