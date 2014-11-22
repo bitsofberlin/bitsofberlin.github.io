@@ -146,11 +146,8 @@ Translations = require('./translations.coffee');
 Button = (function() {
   function Button() {
     this.getOptions();
-    if (this.options.size === 'big-logo') {
+    if (/big-logo/.test(this.options.size)) {
       this.logoElem = $('#podlove-subscribe-button-logo');
-    }
-    if (this.options.size === 'big-title') {
-      this.titleElem = $('#podlove-subscribe-button-title');
     }
     this.elem = $('#podlove-subscribe-button');
     this.I18n = new Translations(this.options.language);
@@ -161,7 +158,7 @@ Button = (function() {
   Button.prototype.render = function() {
     var buttonHtml, image, title;
     buttonHtml = "<span>" + (this.I18n.t('button')) + "</span>";
-    this.elem.addClass(this.options.size).html(buttonHtml);
+    this.elem.addClass(this.options.size.replace('%20', ' ')).html(buttonHtml);
     this.elem.on('click', (function(_this) {
       return function(event) {
         return window.parent.postMessage("clicked_" + _this.options.id, '*');
@@ -718,7 +715,7 @@ FinishPanel = (function(_super) {
     });
   };
 
-  FinishPanel.prototype.template = Handlebars.compile('<div> <div class="top-bar"> <span class="podlove-subscribe-back-button">&lsaquo;</span> <img src="{{scriptPath}}/images/icon-big@2x.png"> <span class="panel-title">{{t "panels.title"}}</span> </div> <img class="podcast-cover" src="{{client.icon}}"> {{#if client.scheme}} <h1>{{t "finish_panel.handing_over_to" client=client.title}}...</h1> <p>{{t "finish_panel.something_went_wrong"}}</p> <p> {{#if client.post}} <form method="post" action="{{client.url}}" target="_blank"> <input type="hidden" name="url" value="{{client.url}}"> <input type="hidden" name="title" value="{{podcast.title}}"> <input type="hidden" name="subtitle" value="{{podcast.subtitle}}"> <input type="hidden" name="image" value="{{podcast.cover}}"> <button> {{t "finish_panel.try_again"}} </button> </form> {{else}} <a href="{{client.url}}" target="_blank"> {{t "finish_panel.try_again"}} </a> {{/if}} <br> {{t "finish_panel.or_install"}} <br> {{#if client.store}} <a href="{{client.store}}" target="_blank"> <img src="{{scriptPath}}/images/stores/{{platform}}.png" class="store-button"> </a> {{/if}} {{#if client.install}} <a href="{{client.store}}" target="_blank"> {{t "finish_panel.install" client=client.title}} </a> {{/if}} {{#if client.register}} <a href="{{client.register}}" target="_blank"> {{t "finish_panel.register_an_account"}} {{client.title}} </a> {{/if}} </p> {{else}} <p> {{t "finish_panel.please_copy_url"}} </p> <input value="{{client.originalUrl}}"> {{/if}} </div>');
+  FinishPanel.prototype.template = Handlebars.compile('<div> <div class="top-bar"> <span class="podlove-subscribe-back-button">&lsaquo;</span> <img src="{{scriptPath}}/images/icon-big@2x.png"> <span class="panel-title">{{t "panels.title"}}</span> </div> <img class="podcast-cover" src="{{client.icon}}"> {{#if client.scheme}} <h1>{{t "finish_panel.handing_over_to" client=client.title}}...</h1> <p>{{t "finish_panel.something_went_wrong"}}</p> <p> {{#if client.post}} <form method="post" action="{{client.url}}" target="_blank"> <input type="hidden" name="url" value="{{client.url}}"> <input type="hidden" name="title" value="{{podcast.title}}"> <input type="hidden" name="subtitle" value="{{podcast.subtitle}}"> <input type="hidden" name="image" value="{{podcast.cover}}"> <button class="podlove-subscribe-button"> {{t "finish_panel.try_again"}} </button> </form> {{else}} <a href="{{client.url}}" class="podlove-subscribe-button" target="_blank"> {{t "finish_panel.try_again"}} </a> {{/if}} <br> {{t "finish_panel.or_install"}} <br> {{#if client.store}} <a href="{{client.store}}" target="_blank"> <img src="{{scriptPath}}/images/stores/{{platform}}.png" class="store-button"> </a> {{/if}} {{#if client.install}} <a href="{{client.store}}" target="_blank"> {{t "finish_panel.install" client=client.title}} </a> {{/if}} {{#if client.register}} <a href="{{client.register}}" target="_blank"> {{t "finish_panel.register_an_account"}} {{client.title}} </a> {{/if}} </p> {{else}} <p> {{t "finish_panel.please_copy_url"}} </p> <input value="{{client.originalUrl}}"> {{/if}} </div>');
 
   return FinishPanel;
 
@@ -926,18 +923,29 @@ Popup = (function() {
   };
 
   Popup.prototype.render = function() {
-    var body, oldOverflow;
     this.elem = $(this.template(this.context()));
-    body = $('body');
-    body.append(this.elem);
-    oldOverflow = body.css('overflow');
-    body.css('overflow', 'hidden');
+    this.body = $('body');
+    this.html = $('html');
+    this.body.append(this.elem);
+    this.disableBackgroundScrolling();
     return this.elem.find('#podlove-subscribe-popup-close-button').on('click', (function(_this) {
       return function() {
-        $('body').css('overflow', oldOverflow);
+        _this.enableBackgroundScrolling();
         return _this.elem.remove();
       };
     })(this));
+  };
+
+  Popup.prototype.disableBackgroundScrolling = function() {
+    this.oldHtmlOverflow = this.html.css('overflow');
+    this.oldBodyOverflow = this.body.css('overflow');
+    this.html.css('overflow', 'hidden');
+    return this.body.css('overflow', 'hidden');
+  };
+
+  Popup.prototype.enableBackgroundScrolling = function(body) {
+    this.html.css('overflow', this.oldHtmlOverflow);
+    return this.body.css('overflow', this.oldBodyOverflow);
   };
 
   Popup.prototype.template = Handlebars.compile('<div id="podlove-subscribe-popup" class="podlove-subscribe"> <div id="podlove-subscribe-popup-modal"> <div id="podlove-subscribe-popup-modal-inner" class="show-left"> <span id="podlove-subscribe-popup-close-button" class="podlove-subscribe-install-button">&times;</span> <div id="podlove-subscribe-panel-podcast"></div> <div id="podlove-subscribe-panel-format"></div> <div id="podlove-subscribe-panel-type"></div> <div id="podlove-subscribe-panel-clients"></div> <div id="podlove-subscribe-panel-finish"></div> </div> <a href="http://www.podlove.org" title="Podlove" target="_blank" class="podlove-logo"><img src="{{scriptPath}}/images/podlove@2x.png"></a> </div> </div>');
