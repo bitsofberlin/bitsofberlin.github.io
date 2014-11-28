@@ -8,6 +8,8 @@ username: bitsofberlin
 emoji_dir: /css/emoji
 permalink: /:year/:month/:day/:title/
 
+category_title_prefix: ''
+
 # Build settings
 markdown: kramdown
 

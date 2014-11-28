@@ -2,6 +2,7 @@
 layout: page
 title: Subscribe
 permalink: /subscribe/
+weight: 99
 ---
 
 <script class="podlove-subscribe-button" src="/subscribe-button/javascripts/app.js" data-language="en" data-size="big-logo" data-json-data="podcastData"></script>
