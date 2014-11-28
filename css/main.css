@@ -167,6 +167,12 @@ a:visited { color: #32a200; }
   max-width: 100%;
 }
 
+/* Welcome styles */
+/* ----------------------------------------------------------*/
+
+.welcome h1 { font-size: 1.1em; margin: 20px 0px; }
+.welcome h2 { margin-bottom: 8px; }
+.welcome .entry { margin-bottom: 25px }
 
 /* Post styles */
 /* ----------------------------------------------------------*/
