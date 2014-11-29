@@ -5,7 +5,9 @@ permalink: /about/
 weight: 100
 ---
 
-This is a [podcast](http://podwhat.org) about tech in Berlin.
+Bits of Berlin is a [podcast](http://podwhat.org) about tech in Berlin. In every episode we talk
+with hidden heroes about their project, their passion. Come with us and
+discover parts of Berlin you might [not know yet](/episodes).
 
 Hosted by Tam Eastley [@travelingtamm](http://twitter.com/travelingtamm) 
 and Bodo Tasche [@bitboxer](http://twitter.com/bitboxer)
