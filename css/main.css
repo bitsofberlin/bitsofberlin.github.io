@@ -167,6 +167,32 @@ a:visited { color: #32a200; }
   max-width: 100%;
 }
 
+/* Welcome styles */
+/* ----------------------------------------------------------*/
+
+.welcome h1 { font-size: 1.1em; margin: 20px 0px; }
+.welcome h2 { margin-bottom: 8px; }
+
+.welcome .row {
+  margin-top: 20px; 
+  margin-left: -10px;
+  width: 840px;
+}
+
+.welcome .row .entry {
+  padding: 10px;
+  width: 30%;
+  float: left;
+  margin-bottom: 25px;
+}
+
+.welcome .row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
 
 /* Post styles */
 /* ----------------------------------------------------------*/
@@ -341,6 +367,21 @@ a:visited { color: #32a200; }
 /* media queries */
 /* ----------------------------------------------------------*/
 
+@media screen and (max-width: 1000px) {
+  .welcome .row {
+    width: auto;
+    float: none;
+    margin-bottom: 15px;
+  }
+  .welcome .row .entry {
+    width: auto;
+    float: none;
+    margin-bottom: 10px;
+  }
+  .welcome .row h1 {
+    margin: 5px 0px;
+  }
+}
 
 @media screen and (max-width: 750px) {
 
@@ -363,6 +404,14 @@ a:visited { color: #32a200; }
 
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .site-nav {
+    /* text-align: left; */
+    /* padding-left: 10px; */
+    position: relative;
+  }
+}
+  
 @media screen and (max-width: 600px) {
 
   .wrap { padding: 0 12px; }

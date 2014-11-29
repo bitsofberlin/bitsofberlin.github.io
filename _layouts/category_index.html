@@ -1,0 +1,25 @@
+---
+layout: default
+weight: 1
+---
+
+<div class="home">
+
+  <ul class="posts">
+    {% for post in site.categories[page.category] %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </div>
+        <div>
+          {{ post.short }} <a href="{{ post.url | prepend: site.baseurl }}">More&nbsp;...</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include flattr.html %}
+  {% include license.html %}
+</div>
+

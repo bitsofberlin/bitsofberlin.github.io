@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+weight: 100
 ---
 
 This is a [podcast](http://podwhat.org) about tech in Berlin.

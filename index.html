@@ -2,21 +2,56 @@
 layout: default
 ---
 
-<div class="home">
+<div class="welcome">
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <div>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </div>
-        <div>
-          {{ post.short }} <a href="{{ post.url | prepend: site.baseurl }}">More&nbsp;...</a>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="top">
+    {% assign episode = site.categories["episodes"].first  %}
+    <h2>
+      <a class="post-link" href="{{ episode.url | prepend: site.baseurl }}">{{ episode.title }}</a>
+    </h2>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="{{ episode.soundcloud }}"></iframe>
+    <p>
+      {{ episode.short }}
+    </p>
+    <p>
+     <a href="{{ episode.url | prepend: site.baseurl }}">Read more&nbsp;...</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="entry">
+      {% assign post = site.categories["blog"].first  %}
+      <h1>Latest Blogpost</h1>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+      <div>
+        <p>
+          {{ post.short }}
+        </p>
+        <p>
+          <a href="{{ post.url | prepend: site.baseurl }}">Read more&nbsp;...</a>
+        </p>
+      </div>
+    </div>
+    <div class="entry">
+      <h1>About</h1>
+      <p>
+        Bits of Berlin is a <a href="http://podwhat.org">podcast</a> about tech in Berlin. In every episode we talk
+        with hidden heroes about their project, their passion. Come with us and
+        discover parts of Berlin you might <a href="/episodes">not know yet</a>.
+      </p>
+    </div>
+    <div class="entry">
+      <h1>Stay in touch</h1>
+      <p>
+        Love the podcast? Follow us on <a href="http://twitter.com/bitsofberlin">Twitter</a> or
+        <a href="http://facebook.com/BitsBerlinPodcast">Facebook</a> and
+        <a href="/subscribe">subscribe</a> to our podcast.
+      </p>
+    </div>
+  </div>
 
   {% include flattr.html %}
   {% include license.html %}
