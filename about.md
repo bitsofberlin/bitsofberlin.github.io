@@ -12,6 +12,8 @@ discover parts of Berlin you might [not know yet](/episodes).
 Hosted by Tam Eastley [@travelingtamm](http://twitter.com/travelingtamm) 
 and Bodo Tasche [@bitboxer](http://twitter.com/bitboxer)
 
+You can find a high resolution version of our logo [here](https://github.com/bitsofberlin/Logo).
+
 [mail@bitsofberlin.org](mailto:mail@bitsofberlin.org)
 
 Bodo Tasche    
