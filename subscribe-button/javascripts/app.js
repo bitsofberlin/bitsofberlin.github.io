@@ -81,12 +81,9 @@ SubscribeButton = (function() {
   };
 
   SubscribeButton.prototype.checkIntegrity = function() {
-    var formats, text;
-    formats = _(this.podcast.feeds).map(function(feed) {
-      return feed.format;
-    });
-    if (!_(formats).contains('mp3')) {
-      text = "Error. Please add at least an MP3 feed. Available formats: " + formats;
+    var text;
+    if (this.podcast.feeds.length === 0) {
+      text = "Subscribe Button Error. Please add at least one feed.";
       console.warn(text);
       return window.alert(text);
     }
@@ -235,6 +232,24 @@ Clients = (function() {
     }
     return this[platform];
   }
+
+  Clients.prototype.printClientList = function() {
+    var item, platform, url, _i, _j, _len, _len1, _ref, _ref1, _results;
+    _ref = ['Android', 'Cloud', 'iOS', 'Linux', 'OSX', 'WindowsPhone', 'Windows7', 'Windows8', 'Windows81'];
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      platform = _ref[_i];
+      console.log("### " + platform);
+      _ref1 = this[platform.toLowerCase()];
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        item = _ref1[_j];
+        url = item.register || item.store || item.install;
+        console.log("  * [" + item.title + "](" + url + ")");
+      }
+      _results.push(console.log(""));
+    }
+    return _results;
+  };
 
   Clients.prototype.rss = {
     title: 'Other (Feed URL)',
@@ -395,7 +410,7 @@ Clients = (function() {
     }
   ];
 
-  Clients.prototype.windowsPhone = [
+  Clients.prototype.windowsphone = [
     {
       title: 'BringCast',
       scheme: 'bringcast://subscribe/',
@@ -515,7 +530,7 @@ ClientsPanel = (function(_super) {
     if (this.prepareClients(this.parent.options.scriptPath)) {
       this.render();
     } else {
-      text = 'No usable feed found. Please add at least an mp3 feed.';
+      text = 'No usable feed found. Please add at least one feed.';
       console.warn(text);
     }
   }
@@ -539,7 +554,7 @@ ClientsPanel = (function(_super) {
 
   ClientsPanel.prototype.detectBestFormat = function() {
     var capabilities;
-    capabilities = this.platform === 'linux' ? ['mp3', 'ogg', 'aac'] : ['aac', 'mp3'];
+    capabilities = this.platform === 'linux' ? ['mp3', 'ogg', 'aac', 'opus'] : ['aac', 'mp3', 'ogg', 'opus'];
     return _(capabilities).find((function(_this) {
       return function(cap) {
         return _(_this.podcast.feeds).findWhere({
@@ -715,7 +730,7 @@ FinishPanel = (function(_super) {
     });
   };
 
-  FinishPanel.prototype.template = Handlebars.compile('<div> <div class="top-bar"> <span class="podlove-subscribe-back-button">&lsaquo;</span> <img src="{{scriptPath}}/images/icon-big@2x.png"> <span class="panel-title">{{t "panels.title"}}</span> </div> <img class="podcast-cover" src="{{client.icon}}"> {{#if client.scheme}} <h1>{{t "finish_panel.handing_over_to" client=client.title}}...</h1> <p>{{t "finish_panel.something_went_wrong"}}</p> <p> {{#if client.post}} <form method="post" action="{{client.url}}" target="_blank"> <input type="hidden" name="url" value="{{client.url}}"> <input type="hidden" name="title" value="{{podcast.title}}"> <input type="hidden" name="subtitle" value="{{podcast.subtitle}}"> <input type="hidden" name="image" value="{{podcast.cover}}"> <button class="podlove-subscribe-button"> {{t "finish_panel.try_again"}} </button> </form> {{else}} <a href="{{client.url}}" class="podlove-subscribe-button" target="_blank"> {{t "finish_panel.try_again"}} </a> {{/if}} <br> {{t "finish_panel.or_install"}} <br> {{#if client.store}} <a href="{{client.store}}" target="_blank"> <img src="{{scriptPath}}/images/stores/{{platform}}.png" class="store-button"> </a> {{/if}} {{#if client.install}} <a href="{{client.store}}" target="_blank"> {{t "finish_panel.install" client=client.title}} </a> {{/if}} {{#if client.register}} <a href="{{client.register}}" target="_blank"> {{t "finish_panel.register_an_account"}} {{client.title}} </a> {{/if}} </p> {{else}} <p> {{t "finish_panel.please_copy_url"}} </p> <input value="{{client.originalUrl}}"> {{/if}} </div>');
+  FinishPanel.prototype.template = Handlebars.compile('<div> <div class="top-bar"> <span class="podlove-subscribe-back-button">&lsaquo;</span> <img src="{{scriptPath}}/images/icon-big@2x.png"> <span class="panel-title">{{t "panels.title"}}</span> </div> <img class="podcast-cover" src="{{client.icon}}"> {{#if client.scheme}} <h1>{{t "finish_panel.handing_over_to" client=client.title}}...</h1> <p>{{t "finish_panel.something_went_wrong"}}</p> <p> {{#if client.post}} <form method="post" action="{{client.url}}" target="_blank"> <input type="hidden" name="url" value="{{client.url}}"> <input type="hidden" name="title" value="{{podcast.title}}"> <input type="hidden" name="subtitle" value="{{podcast.subtitle}}"> <input type="hidden" name="image" value="{{podcast.cover}}"> <button class="podlove-subscribe-button"> {{t "finish_panel.try_again"}} </button> </form> {{else}} <a href="{{client.url}}" class="podlove-subscribe-button" target="_blank"> {{t "finish_panel.try_again"}} </a> {{/if}} {{#if client.store}} {{t "finish_panel.or_install"}} <br> <a href="{{client.store}}" target="_blank"> <img src="{{scriptPath}}/images/stores/{{platform}}.png" class="store-button"> </a> {{/if}} {{#if client.install}} <a href="{{client.store}}" target="_blank"> {{t "finish_panel.install" client=client.title}} </a> {{/if}} {{#if client.register}} <a href="{{client.register}}" target="_blank"> {{t "finish_panel.register_an_account"}} {{client.title}} </a> {{/if}} </p> {{else}} <p> {{t "finish_panel.please_copy_url"}} </p> <input value="{{client.originalUrl}}"> {{/if}} </div>');
 
   return FinishPanel;
 
@@ -1194,7 +1209,7 @@ UAs = {
   windows7: /Windows NT 6.1/,
   windows8: /Windows NT 6.2/,
   windows81: /Windows NT 6.3/,
-  windowsPhone: /trident/i,
+  windowsphone: /trident/i,
   android: /android/i,
   ios: /(ipad|iphone|ipod)/i,
   linux: /linux/i,
