@@ -7,7 +7,7 @@ short: A new year, some new podcasts.
 ---
 Happy New Year Podcast fans!
 2015 has arrived, but sadly, Tam has not. She's still in Canada on vacation, and to pass the time until she gets back and another Bits of Berlin can be made, we've rounded up some more podcast recommendations to keep you going.
-If, however, you miss Bodo's voice and you just can't wait any longer, you can listen to him (in German), in the latest [Geekstammtisch Podcast](http://geekstammtisch.de/#GST036), recorded from this year's [CCC](http://events.ccc.de/congress/2014/wiki/Main_Page)!
+If, however, you miss Bodo's voice and you just can't wait any longer, you can listen to him (in German), in the latest [Geekstammtisch Podcast](http://geekstammtisch.de/#GST036), recorded from this year's [31st Chaos Communication Congress](http://events.ccc.de/congress/2014/wiki/Main_Page)!
 Enjoy!
 
 **[Wostkinder](http://wostkinder.de) - recommended by Bodo - GERMAN**
