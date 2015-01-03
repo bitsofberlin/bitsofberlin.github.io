@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Podcast Recommendations"
+title: "Podcast Recommendations: Serial & Strangers"
 date: 2014-11-30 20:00:00
 categories: blog
 short: We love podcasts. And in this post we recommend two awesome podcasts to listen to.
