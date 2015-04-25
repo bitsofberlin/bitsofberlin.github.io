@@ -16,7 +16,7 @@ Podcast is for you. Gunnar Lott and Christian Schmidt, two former computer game
 journalists, pick one game per episode and talk about it. With lots of background stories about the makers and their deep knowledge of the gaming industry of the 80s and 90s.
 
 
-**[Stuff Mom Never Old You](http://www.stuffmomnevertoldyou.com) - recommended by Tam - ENGLISH**
+**[Stuff Mom Never Told You](http://www.stuffmomnevertoldyou.com) - recommended by Tam - ENGLISH**
 [![Stuff Mom Never Told You Logo](/images/recommendations-3/stmnty-logo-blue-2.png)](http://www.stuffmomnevertoldyou.com)
 
 Stuff Mom Never Told You is a rich resource of everything about women, being a woman, representations of women, and actually a whole bunch about dudes too. Hosted by Cristen Conger and Caroline Ervin, the podcast is incredibly well researched, and is fueled by neverending curiosity about a wide range of topics, from the history of female architects, painters, and astronomers, to slut shaming, catcalling, and comics. 
