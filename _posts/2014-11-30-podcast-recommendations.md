@@ -5,7 +5,7 @@ date: 2014-11-30 20:00:00
 categories: blog
 short: We love podcasts. And in this post we recommend two awesome podcasts to listen to.
 ---
-We started Bits of Berlin because we love podcasts. We love listening to them on the way to work, we eagerly swap recommendations with friends, and we get giddy at the sight of our [client](http://podwhat.org/en/clients/) downloading the latest episode of a favourite podcast.
+We started Bits of Berlin because we love podcasts. We love listening to them on the way to work, we eagerly swap recommendations with friends, and we get giddy at the sight of our client downloading the latest episode of a favourite podcast.
 
 Because we think podcasts are so amazing, and because we want to spread the word about all the wonderful ones out there, we decided it's time to start recommending some of our favourite podcasts to our listeners.
 

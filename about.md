@@ -5,7 +5,7 @@ permalink: /about/
 weight: 100
 ---
 
-Bits of Berlin is a [podcast](http://podwhat.org) about tech in Berlin. In every episode we talk
+Bits of Berlin is a podcast about tech in Berlin. In every episode we talk
 with hidden heroes about their project, their passion. Come with us and
 discover parts of Berlin you might [not know yet](/episodes).
 

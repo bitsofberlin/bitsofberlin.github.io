@@ -28,5 +28,3 @@ podcast client. If you do, you can simply press the subscribe button
 above or copy the link to the <a href="http://feeds.soundcloud.com/users/soundcloud:users:98241136/sounds.rss">feed</a>
 and paste it into your app. And if you don't: consider installing one :wink: .
 
-If you want to learn more about podcasts and what app you can use to
-listen to them, you should read [podwhat.org](http://podwhat.org).
