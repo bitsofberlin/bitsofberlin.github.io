@@ -5,16 +5,15 @@ layout: default
 <div class="welcome">
 
   <div class="top">
-    {% assign episode = site.categories["episodes"].first  %}
     <h2>
-      <a class="post-link" href="{{ episode.url | prepend: site.baseurl }}">{{ episode.title }}</a>
+      <a class="post-link" href="http://episodes.bitsofberlin.org/1-episode-6-freifunk">Episode 6 - Freifunk</a>
     </h2>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="{{ episode.soundcloud }}"></iframe>
+    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://bits-of-berlin.podigee.io/1-episode-6-freifunk/embed"></script>
     <p>
-      {{ episode.short }}
+			Internet for everyone!
     </p>
     <p>
-     <a href="{{ episode.url | prepend: site.baseurl }}">Read more&nbsp;...</a>
+     <a href="http://episodes.bitsofberlin.org/1-episode-6-freifunk">Read more&nbsp;...</a>
     </p>
   </div>
 

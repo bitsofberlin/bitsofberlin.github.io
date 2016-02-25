@@ -16,7 +16,7 @@ weight: 99
       {
         "type": "audio",
         "format": "mp3",
-        "url": "http://feeds.soundcloud.com/users/soundcloud:users:98241136/sounds.rss",
+        "url": "http://episodes.bitsofberlin.org/feed/mp3",
         "variant": "high"
       }
     ]
