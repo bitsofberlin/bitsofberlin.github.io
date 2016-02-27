@@ -123,6 +123,10 @@ a:visited { color: #32a200; }
   padding-top: 5px;
 }
 
+.site-footer .right-footer p img {
+  vertical-align: middle;
+}
+
 .github-icon-svg,
 .twitter-icon-svg {
   display: inline-block;
@@ -362,6 +366,15 @@ a:visited { color: #32a200; }
 
 /* media queries */
 /* ----------------------------------------------------------*/
+
+@media screen and (min-width: 601px) {
+  .site-footer .right-footer {
+    margin-top: -18px;
+  }
+  .site-footer .right-footer p {
+    display: inline;
+  }
+}
 
 @media screen and (max-width: 1000px) {
   .welcome .row {
