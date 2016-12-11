@@ -9,6 +9,9 @@ layout: default
   </header>
 
   <article class="post-content">
+  {% if page.podigee %}
+    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://bits-of-berlin.podigee.io/{{ page.podigee }}/embed"></script>
+  {% endif %}
   {{ content }}
   </article>
 

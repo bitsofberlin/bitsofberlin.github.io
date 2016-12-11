@@ -5,15 +5,18 @@ layout: default
 <div class="welcome">
 
   <div class="top">
+    {% assign episode = site.categories["episodes"].first %}
     <h2>
-      <a class="post-link" href="http://episodes.bitsofberlin.org/9-frauenloop">Episode 8 - FrauenLoop</a>
+      <a class="post-link" href="http://episodes.bitsofberlin.org/{{ episode.podigee }}">
+        {{ episode.title }}
+      </a>
     </h2>
-    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://bits-of-berlin.podigee.io/9-frauenloop/embed"></script>
+    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://bits-of-berlin.podigee.io/{{ episode.podigee }}/embed"></script>
     <p>
-			Teaching newcomers to code
+      {{ episode.short }}
     </p>
     <p>
-     <a href="http://episodes.bitsofberlin.org/9-frauenloop">Read more&nbsp;...</a>
+      <a href="http://episodes.bitsofberlin.org/{{ episode.podigee }}">Read more&nbsp;...</a>
     </p>
   </div>
 
