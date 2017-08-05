@@ -25,6 +25,6 @@ weight: 99
 
 You can listen to this podcast on this website, but you might already use a
 podcast client. If you do, you can simply press the subscribe button
-above or copy the link to the <a href="http://feeds.soundcloud.com/users/soundcloud:users:98241136/sounds.rss">feed</a>
+above or copy the link to the <a href="http://episodes.bitsofberlin.org/feed/mp3">feed</a>
 and paste it into your app. And if you don't: consider installing one :wink: .
 
