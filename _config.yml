@@ -2,7 +2,7 @@
 title: "bits of berlin"
 description: "This is a podcast about tech in Berlin."
 baseurl: ""
-url: "http://bitsofberlin.org"
+url: "https://bitsofberlin.org"
 username: bitsofberlin
 
 emoji_dir: /css/emoji
