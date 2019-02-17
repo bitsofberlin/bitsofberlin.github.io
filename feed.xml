@@ -1,20 +1,51 @@
 ---
 layout: none
+permalink: "feed/mp3/"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
+    <atom:link href="{{ "/feed/mp3" | prepend: site.baseurl | prepend: site.url }}" rel="self"/>
+    <atom:link href="{{ "/feed/mp3" | prepend: site.baseurl | prepend: site.url }}" rel="first"/>
+    <atom:link href="{{ "/feed/mp3" | prepend: site.baseurl | prepend: site.url }}" rel="last"/>
     <title>{{ site.title | xml_escape }}</title>
+    <language>en</language>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    <itunes:type>episodic</itunes:type>
+    <copyright>All rights reserved</copyright>
+    <image>
+      <url>{{ "/images/podcast_image.jpg" | prepend: site.baseurl | prepend: site.url}}</url>
+      <title>bits of berlin</title>
+      <link>https://episodes.bitsofberlin.org/</link>
+    </image>
+    <itunes:image href="{{ "/images/podcast_image.jpg" | prepend: site.baseurl | prepend: site.url}}"/>
+    <itunes:subtitle>This is a podcast about tech in Berlin.</itunes:subtitle>
+    <itunes:author>bits of berlin</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:keywords></itunes:keywords>
+    <itunes:category text="Technology"/>
+    <itunes:summary>This is a podcast about tech in Berlin. Hosted by Tam Eastley and Bodo Tasche</itunes:summary>
+    <itunes:owner>
+      <itunes:name>bits of berlin</itunes:name>
+      <itunes:email>bodo@wannawork.de</itunes:email>
+    </itunes:owner>
+    <atom:link href="{{ "/feed/mp3" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
     {% for post in site.posts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
+        <itunes:title>{{ post.title | xml_escape }}</itunes:title>
         <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        {% if post.guid %}
+        <guid isPermaLink="false">{{ post.guid }}</guid>
+        {% else %}
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% endif %}
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:author>bits of berlin</itunes:author>
+        <enclosure url="{{ post.mp3 | prepend: "/mp3/" | prepend: site.baseurl | prepend: site.url }}" type="audio/mpeg"/>
       </item>
     {% endfor %}
   </channel>

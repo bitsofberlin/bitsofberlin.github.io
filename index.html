@@ -7,7 +7,7 @@ layout: default
   <div class="top">
     {% assign episode = site.categories["episodes"].first %}
     <h2>
-      <a class="post-link" href="http://episodes.bitsofberlin.org/{{ episode.podigee }}">
+      <a class="post-link" href="{{ episode.url }}">
         {{ episode.title }}
       </a>
     </h2>
@@ -16,7 +16,7 @@ layout: default
       {{ episode.short }}
     </p>
     <p>
-      <a href="http://episodes.bitsofberlin.org/{{ episode.podigee }}">Read more&nbsp;...</a>
+      <a href="{{ episode.url }}">Read more&nbsp;...</a>
     </p>
   </div>
 

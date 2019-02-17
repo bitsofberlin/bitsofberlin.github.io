@@ -14,7 +14,7 @@ category_dir: ''
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
 - jekyll-sitemap
 - jemoji
-
+- jekyll-redirect-from

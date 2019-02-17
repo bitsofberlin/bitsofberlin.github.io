@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 2.2'
+gem 'jekyll', '~> 3.8'
 gem 'jekyll-sitemap'
 gem 'jemoji'
-
+gem 'jekyll-redirect-from'
