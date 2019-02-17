@@ -10,6 +10,7 @@
         subtitle: '{{ include.ppage.short | escape }}',
         publicationDate: '{{ include.page.date | date: "%Y-%m-%d %H:%M" }}',
         poster: '{{ include.page.image | prepend: site.baseurl | prepend: site.url}}',
+        link: '{{ include.page.url | prepend: site.baseurl }}',
         show: {
             title: 'Bits Of Berlin',
             subtitle: 'Bits of Berlin is a podcast about tech in Berlin.',
