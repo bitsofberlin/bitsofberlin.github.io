@@ -11,7 +11,7 @@ layout: default
         {{ episode.title }}
       </a>
     </h2>
-    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://bits-of-berlin.podigee.io/{{ episode.podigee }}/embed"></script>
+    {% include podlove.html page=episode %}
     <p>
       {{ episode.short }}
     </p>

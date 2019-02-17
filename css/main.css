@@ -28,7 +28,7 @@ a:visited { color: #32a200; }
 .wrap:after { content:""; display:table; }
 .wrap:after { clear: both; }
 .wrap {
-  max-width: 800px;
+  max-width: 768px;
   padding: 0 30px;
   margin: 0 auto;
   zoom: 1;
@@ -180,7 +180,7 @@ a:visited { color: #32a200; }
 .welcome .row {
   margin-top: 20px; 
   margin-left: -10px;
-  width: 840px;
+  width: 778px;
 }
 
 .welcome .row .entry {
@@ -463,3 +463,8 @@ a:visited { color: #32a200; }
     margin: 0 0 15px; }
 
 }
+
+#podlove-player {
+  width: 100%;
+}
+

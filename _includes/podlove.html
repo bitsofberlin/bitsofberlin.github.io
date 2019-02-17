@@ -1,0 +1,31 @@
+<script src="https://cdn.podlove.org/web-player/embed.js"></script>
+<div id="podlove-player"></div>
+<script>
+    podlovePlayer('#podlove-player', {
+        theme: {
+          main: "#F0F0F0",
+          highlight: "#000"
+        },
+        title: '{{ include.page.title | escape }}',
+        subtitle: '{{ include.ppage.short | escape }}',
+        publicationDate: '{{ include.page.date | date: "%Y-%m-%d %H:%M" }}',
+        poster: '{{ include.page.image | prepend: site.baseurl | prepend: site.url}}',
+        show: {
+            title: 'Bits Of Berlin',
+            subtitle: 'Bits of Berlin is a podcast about tech in Berlin.',
+            summary: 'Bits of Berlin is a podcast about tech in Berlin. In every episode we talk with hidden heroes about their project, their passion. Come with us and discover parts of Berlin you might not know yet.',
+          poster: '{{ "/images/podcast_image.jpg" | prepend: site.baseurl | prepend: site.url }}',
+            url: 'https://bitsofberlin.org'
+        },
+        chapters: [
+          {% for chapter in include.page.chapters %}
+            { start: '{{ chapter.start }}', title: '{{chapter.title | encode }}' },
+          {% endfor %}
+        ],
+        audio: [{
+          url: '{{ include.page.mp3 | prepend: "/mp3/" | prepend: site.baseurl | prepend: site.url }}',
+          mimeType: 'audio/mp3',
+          title: 'Audio MP3'
+        }]
+    });
+</script>
