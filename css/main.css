@@ -368,9 +368,6 @@ a:visited { color: #32a200; }
 /* ----------------------------------------------------------*/
 
 @media screen and (min-width: 601px) {
-  .site-footer .right-footer {
-    margin-top: -18px;
-  }
   .site-footer .right-footer p {
     display: inline;
   }
