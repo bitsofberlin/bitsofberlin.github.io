@@ -31,7 +31,7 @@ permalink: "feed/mp3/"
       <itunes:email>bodo@wannawork.de</itunes:email>
     </itunes:owner>
     <atom:link href="{{ "/feed/mp3" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    {% for post in site.categories["episodes"] %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <itunes:title>{{ post.title | xml_escape }}</itunes:title>
